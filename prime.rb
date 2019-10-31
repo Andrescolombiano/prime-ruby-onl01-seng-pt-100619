@@ -8,12 +8,15 @@
 # end
 
 def prime?(integer)
-  if integer < 2
-    return false
-  else
-    (2..num / 2).each do |n|
-      return false if num % n == 0
-    end
-  end
+  if integer == 1
+    false
+elsif integer == 2
   true
-end 
+elsif integer <=0
+  false
+else
+  range = (2..integer).to_a
+  range.pop
+  range.none? {|number| integer % number == 0}
+end
+end
